@@ -1,42 +1,115 @@
-/*********************************GENERALITES**********************************/
+/* ********************************************************
+FONTS
+******************************************************** */
+
+/* ********************************************************
+GENERALITES
+******************************************************** */
+/* On centre le site sur une petite largeur
+	 * de manière à avoir des lignes pas trop longues */
 body{
-    margin:auto;
+    margin:0 auto;
+    max-width:420px;
+    /* Par défaut les lignes auront une hauteur de 1 fois
+	 * et demi la taille de police.
+	 * Notez bien l’absence d’unité */
     line-height:1.5;
-    text-align:center;
-    width:420px;
-    font-size:1em;
+   font-family:"Cardo", serif;
+   color: #333;
     
 }
-header{
-    text-align:center;
+h1,
+h2,
+h3{
+    font-family: "Special Elite", serif;
 }
-main{
-    text-align:center;
-}
-footer{
-    text-align:center;
-}
-p::firstletter{
-  font-family:Updock;  
+
 }
 h1{
+    font-weight: 400;
     font-size:4em;
     line-height:2;
-    font-family:Updock;
+    /* On ne met pas de texte en majuscule dans le HTML :
+	 * il s’agit de présentation = de CSS */
+	 text-transform: uppercase;
 }
 h2{
+    font-weight:normal;
     font-size:2.5em;
     line-height:1.2;
-    font-family:Updock;
+    text-transform: uppercase;
 }
 h3{
+    font-weight:1.5em;
     font-size:1.5em;
-    line-height:1;
-    font-family:Updock;
+    line-height: 1;
+
 }
-hr{
-    font-weight:bold;
+/* Petite fleuron pour habiller les titres secondaires */
+h3::before {
+    content:"❧";
+}
+/* Styles des liens par défaut */
+a{
+    color:#333;
+    text-decoration: none;
+    /* On remplace le soulignement par une bordure */
+    border-bottom: 1px dashed;
+}
+p{
+    /* Attention au texte justifié sur le web !
+	 * Bien utiliser le plugin Hyphenator ou 
+	 * contrôler chaque texte sur-mesure */
+	 text-align: justify;
 }
 
+/* ********************************************************
+CITATIONS
+******************************************************** */
+/* BlockQuotes */
+blockquote{
+    font-size: 1.2em;
+    font-style: italic;
+}
+blockquote p::before {
+    content: "«";
+}
+blockquote p::after {
+    content: "»";
+}
+/* Quotes */
+q{
+    font-style: italic;
+    quotes:" « » ";
+}
 
-/*******************************MAIN LAYOUT************************************/
+/* ********************************************************
+HEADER
+******************************************************** */
+header{
+    text-align:center;
+    border-bottom: 1px solid;
+}
+/* ********************************************************
+MAIN
+******************************************************** */
+article p:first-letter {
+    margin-right: 0.5em;
+    font-size: 2em;
+    font-weight:400;
+    font-family: "Special Elite", sans-serif;
+    float: left;
+    color: #333;
+}
+/* ********************************************************
+FOOTER
+******************************************************** */
+.footer{
+    text-align:center;
+    border-top: 1px solid;
+}
+.end{
+    text-align:center;
+    font-size: 3em;
+    line-height: 3em;
+}
